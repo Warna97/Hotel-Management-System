@@ -5,17 +5,17 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class User {
+public class Room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
-    private String password;
-    private String email;
+    private String roomNumber;
+    private String type;
+    private Double price;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "room")
     private List<Booking> bookings;
 
     // Getters and Setters
@@ -27,28 +27,28 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getRoomNumber() {
+        return roomNumber;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setRoomNumber(String roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
-    public String getPassword() {
-        return password;
+    public String getType() {
+        return type;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getEmail() {
-        return email;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public List<Booking> getBookings() {
